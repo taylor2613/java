@@ -1,7 +1,16 @@
 package org.opentutorials.javatutorilas.eclipse;
 
 public class hellofor {
-
+	public static String numbering(int init,int end) {
+		int i=init;
+		String output="";
+		while(i<end) {
+			output += i;
+			i++;
+		}
+		//return 
+		return output;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		/*
@@ -16,10 +25,14 @@ public class hellofor {
 		classGroup[0]="a";
 		System.out.println(classGroup.length);
 		*/
+		/*
 		String classGroup[] = {"a","b","c"};
 		for(int i=0;i<classGroup.length;i++) {
-			System.out.println(classGroup[i] + "ÇÐ»ý°ú ¸é´ã");
+			System.out.println(classGroup[i] + "í•™ìƒê³¼ ë©´ë‹´");
 		}
+		*/
+		String result = numbering(1,5);
+		System.out.println(result);
 	}
 
 }
