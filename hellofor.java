@@ -1,5 +1,5 @@
 package org.opentutorials.javatutorilas.eclipse;
-
+import java.util.Scanner;
 public class hellofor {
 	public static String numbering(int init,int end) {
 		int i=init;
@@ -31,8 +31,21 @@ public class hellofor {
 			System.out.println(classGroup[i] + "학생과 면담");
 		}
 		*/
+		/*
 		String result = numbering(1,5);
 		System.out.println(result);
+		*/
+		/*
+		Scanner sc = new Scanner(System.in);
+		int i = sc.nextInt();
+		System.out.println(i*10000);
+		sc.close();
+		*/
+		Scanner sc = new Scanner(System.in);
+		while(sc.hasNextInt()) {
+			System.out.println(sc.nextInt()*1000);
+		}
+		sc.close();
 	}
 
 }
