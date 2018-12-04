@@ -1,0 +1,85 @@
+
+
+
+//codility number 1 problem
+
+
+import java.util.Scanner;
+
+class Solution {
+    public static int solution(int N) {
+        if (N == 0) {
+            return 0;
+        }
+
+        int n = 0;
+        for (int i = 0; i < 24; i++) {
+            if (N < Math.pow(2, i)) {
+                n = i;
+                break;
+            }
+        }
+        int[] temp = new int[n];
+        int[] bina = new int[n];
+        int max =0;
+
+        while (true) {
+            for (int i = 0; i < n; i++) {
+                temp[i] = N % 2;
+                N = N / 2;
+            }
+            for (int i = 0; i <n; i++) {
+                bina[i] = temp[n-i-1];
+            }
+            break;
+        }
+
+        int k = 0;
+        int j=0;
+        while (k < n) {
+            int count = 0;
+            for (int i = 1; i < n ; i++) {
+
+                if (bina[j] == 1 && bina[i] == 0) {
+                    count++;
+                    k++;
+                    if(k>=n)
+                        break;
+
+                }
+                if (bina[j] == 1 && bina[i] ==1 ) {
+                    j=i;
+                    k++;
+                    if (max < count) {
+                        max = count;
+                        count=0;
+                    }
+                    if(k>=n)
+                        break;
+
+                }
+                for(int a=j;a<bina[j] ;a++){
+                    if(bina[j]==0 && bina[i]==0){
+                        return 0;
+                    }
+                }
+            }
+
+
+        }
+
+
+        return max;
+    }
+
+    public static void main (String[]args){
+        int N;
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+
+        int b =solution(N);
+        System.out.println(b);
+    }
+
+
+}
