@@ -31,7 +31,8 @@ class Solution {
     }
 }
 -------------------------------------------
-
+//new perfect version
+//using quicksort and make it simple to compare each other
 class Solution {
     public static void quicksort(int[] a,int low,int high){
         if(a==null || a.length==0){
