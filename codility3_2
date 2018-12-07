@@ -1,0 +1,24 @@
+// you can also use imports, for example:
+// import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+class Solution {
+    public int solution(int X, int Y, int D) {
+        
+        
+        while(X<Y){
+            if((Y-X)%D!=0){
+                int k=(Y-X)/D+1;
+                return k;
+            }else if((Y-X)%D==0){
+                int k=(Y-X)/D;
+                return k;
+            }
+            
+        }
+        
+        return 0;
+    }
+}
