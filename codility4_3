@@ -1,0 +1,31 @@
+//score 66
+
+class Solution {
+    public int[] solution(int N, int[] A) {
+        int M=A.length;
+        int max=0;
+        int[] result = new int[N];
+        for(int i=0;i<N;i++){
+            result[i]=0;
+        }
+        for(int i=0;i<M;i++){
+            if(A[i]>N){
+                for(int j=0;j<N;j++){
+                    result[j]=max;
+                }
+            }else{
+                result[A[i]-1]+=1;
+                for(int j=0;j<N;j++){
+                    if(max<result[j]){
+                        max=result[j];
+                    }
+                }
+                
+            }
+        }
+
+        
+            return result;
+        
+    }
+}
