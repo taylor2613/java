@@ -83,3 +83,31 @@ class Solution {
         return 0;
     }
 }
+---------------------------------------------------------------------------------
+//final version 100% match
+import java.util.*;
+class Solution {
+    public int solution(int[] A) {
+        HashSet<Integer> h = new HashSet<Integer>();
+        int n=A.length;
+        
+        for(int i=0;i<n;i++){
+            h.add(A[i]);
+        }
+        if(!h.contains(1)){
+            return 1;
+        }
+        int count=0;
+        
+        for(int i=0;i<1;i++){
+            for(int j=0;j<h.size();j++){
+                if(!h.contains(j+1)){
+                    count++;
+                    return j+1;
+                }
+            }
+            return n+1;
+        }
+        return 0;
+    }
+}
