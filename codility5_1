@@ -1,0 +1,59 @@
+
+//correctness 100%       performance 20%..
+class Solution {
+    public int solution(int[] A) {
+        int n=A.length;
+        int east=0,west=0;
+        if(n==1 && (A[0]==0 || A[0]==1)){
+            return 0;
+        }
+        for(int i=0;i<n;i++){
+            if(A[i]==0){
+                east++;
+            }else if(A[i]==1){
+                west++;
+            }
+        }
+        int[] east_arr = new int[east];
+        int e=0,w=0;
+        int[] west_arr = new int[west];
+        for(int i=0;i<n;i++){
+            if(A[i]==0){
+                east_arr[e++]=i;
+            }
+        }
+        for(int i=0;i<n;i++){
+            if(A[i]==1){
+                west_arr[w++]=i;
+            }
+        }
+        if(e==0 || w==0){
+            return 0;
+        }
+        int a=0,b=0,count=0;
+
+        for(int i=0;i<w*e;i++){
+            if(east_arr[a]<west_arr[b]){
+                count++;
+               
+
+            }  b++;            
+            if(b==w && a<e){
+                   a++;
+                   b=0;
+           }
+         
+            
+        }
+        if(count>1000000){
+            return -1;
+       }else{
+            return count;
+       }
+        
+        
+
+
+        
+    }
+}
